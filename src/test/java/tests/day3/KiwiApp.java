@@ -92,6 +92,8 @@ public class KiwiApp {
 
         ReusableMethods.tiklamaMethodu(117,1352,1000);
 
+        kiwiPages.setDateButton.click();
+
         // search butonuna tiklanir
         kiwiPages.searchButton.click();
 
@@ -107,6 +109,9 @@ public class KiwiApp {
         kiwiPages.nonstopButton.click();
 
         // gelen bilet fiyati kaydedilir ve kullanicin telefonuna sms olarak gonderilir
+        String fiyat = kiwiPages.enUcuzFiyat.getText();
+
+        driver.sendSMS("65555556",fiyat);
 
 
     }

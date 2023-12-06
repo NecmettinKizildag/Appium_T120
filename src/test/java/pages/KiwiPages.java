@@ -43,4 +43,6 @@ public class KiwiPages {
     @FindBy(xpath = "//*[@class='android.widget.TextView'][12]")
     public WebElement enUcuzFiyat;
 
+    @FindBy(xpath = "//*[@text='Set date']")
+    public WebElement setDateButton;
 }
