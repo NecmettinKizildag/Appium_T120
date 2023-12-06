@@ -54,13 +54,58 @@ public class KiwiApp {
         Thread.sleep(1000);
 
         // kalkis ulkesi secenegine tiklanir ve default olan ulke kaldirilir
-
+        ReusableMethods.tiklamaMethodu(405,774,500);
+        ReusableMethods.tiklamaMethodu(1011,136,750);
 
         // kalkis yapilacak ulke/sehir girilir ve sec e tiklanir
+        if (!driver.isKeyboardShown()){
+            kiwiPages.aramaKutusu.sendKeys("istanbul");
+        }  else {
+            driver.getKeyboard().pressKey("istanbul");
+        }
+
+        Thread.sleep(1000);
+
+        ReusableMethods.tiklamaMethodu(369,292,1000);
+
+        kiwiPages.chooseButton.click();
+
         // varis ulkesi secenegine tiklanir ve gidilecek ulke girilir
-        // gidis tarihi eylul ayinin 21 i olarak secilir ve set date e tiklanir
+        kiwiPages.anywhereButton.click();
+
+        driver.getKeyboard().pressKey("varsova");
+
+        Thread.sleep(1000);
+
+        ReusableMethods.tiklamaMethodu(369,292,1000);
+
+        kiwiPages.chooseButton.click();
+
+        Thread.sleep(1000);
+
+        // gidis tarihi ocak ayinin 21 i olarak secilir ve set date e tiklanir
+        kiwiPages.anytimeButton.click();
+
+        Thread.sleep(1000);
+
+        ReusableMethods.screenScrollMethod(541,1341,800,548,482,250);
+
+        ReusableMethods.tiklamaMethodu(117,1352,1000);
+
         // search butonuna tiklanir
+        kiwiPages.searchButton.click();
+
+        Thread.sleep(4000);
+
         // en  ucuz ve aktarmasiz filtrelemeleri yapilir
+        ReusableMethods.tiklamaMethodu(259,259,500);
+
+        ReusableMethods.tiklamaMethodu(409,584,500);
+
+        kiwiPages.stopsButton.click();
+
+        kiwiPages.nonstopButton.click();
+
         // gelen bilet fiyati kaydedilir ve kullanicin telefonuna sms olarak gonderilir
 
 
